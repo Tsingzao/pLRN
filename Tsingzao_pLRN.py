@@ -29,19 +29,19 @@ RESOLUTION = 16
 NUM_FRAME  = 16
 NUM_CLASS  = 15
 '''=======================TrainData========================================='''
-BASIC_PATH = '/data/yutingzhao/LowResolution/Penn_Train_'+str(RESOLUTION)+'.h5'
+BASIC_PATH = '/data/LowResolution/Penn_Train_'+str(RESOLUTION)+'.h5'
 h5file     = h5py.File(BASIC_PATH,'r')
 otrain_data= h5file['data'][:]
 h5file.close()
 data       = np.transpose(otrain_data, (0,1,2,4,3))
 '''=======================TestData=========================================='''
-BASIC_PATH = '/data/yutingzhao/LowResolution/Penn_Test_'+str(RESOLUTION)+'.h5'
+BASIC_PATH = '/data/LowResolution/Penn_Test_'+str(RESOLUTION)+'.h5'
 h5file     = h5py.File(BASIC_PATH,'r')
 otest_data = h5file['data'][:]
 h5file.close()
 data_t     = np.transpose(otest_data, (0,1,2,4,3))
 '''=======================AuxiliaryTrain===================================='''
-PRO_PATH   = '/data/yutingzhao/LowResolution/Penn_Train_'+str(RESOLUTION)+'_target.h5'
+PRO_PATH   = '/data/LowResolution/Penn_Train_'+str(RESOLUTION)+'_target.h5'
 h5file     = h5py.File(PRO_PATH,'r')
 ftrain_data= h5file['foreground'][:]
 btrain_data= h5file['background'][:]
@@ -49,7 +49,7 @@ h5file.close()
 ftrain_data= np.transpose(ftrain_data, (0,1,2,4,3))*100
 btrain_data= np.transpose(btrain_data, (0,1,2,4,3))*100
 '''=======================AuxiliaryTest====================================='''
-PRO_PATH   = '/data/yutingzhao/LowResolution/Penn_Test_'+str(RESOLUTION)+'_target.h5'
+PRO_PATH   = '/data/LowResolution/Penn_Test_'+str(RESOLUTION)+'_target.h5'
 h5file     = h5py.File(PRO_PATH,'r')
 ftest_data = h5file['foreground'][:]
 btest_data = h5file['background'][:]
