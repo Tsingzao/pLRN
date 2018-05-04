@@ -3,7 +3,7 @@
 """
 Created on Thu Oct 12 15:18:09 2017
 
-@author: yutingzhao
+@author: Tsingzao
 """
 
 import os
